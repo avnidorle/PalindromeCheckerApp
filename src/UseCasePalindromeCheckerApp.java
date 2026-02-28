@@ -1,15 +1,27 @@
-public class UseCasePalindromeCheckerApp {
-    public static void main(String[] args) {
-        String input = "Banana";
-        boolean isPalindrome = true;
-        for (int i = 0; i < input.length() / 2; i++) {
+public class UseCase2PalindromeCheckerApp {
 
-            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+    public static void main(String[] args) {
+
+        String input = "madam"; // hardcoded string
+
+        boolean isPalindrome = true;
+
+        int start = 0;
+        int end = input.length() - 1;
+
+        // Compare from both ends
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end)) {
                 isPalindrome = false;
                 break;
             }
+            start++;
+            end--;
         }
+
+        // Display result
         System.out.println("Input String: " + input);
+
         if (isPalindrome) {
             System.out.println("Result: The string is a Palindrome.");
         } else {
@@ -17,4 +29,3 @@ public class UseCasePalindromeCheckerApp {
         }
     }
 }
-//test
